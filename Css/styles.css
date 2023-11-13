@@ -1,0 +1,135 @@
+:root {
+  --blanco: #ffffff;
+
+  --oscuro: #212121;
+  
+  --primario: #ffc107;
+  
+  --secundario: #0097a7;
+  
+  --gris: #757575;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: 'Krub', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  *,*:before,*:after{
+    box-sizing: inherit;
+
+  }
+  body {
+
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .sombra{
+    box-shadow:0px 0px 0px 15px 0px rgba(112,112,112,0.48); 
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+
+  }
+
+  .titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .contenedor{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #218114;
+    padding: 10px 10px;
+    
+    font-weight: bold;  
+
+  }
+  
+  .navegacion-principal a {
+    padding: 1rem;
+    margin-left: 100px;
+    margin-right: 100px; /* Ajusta el valor según tus necesidades para aumentar el margen entre opciones */
+    
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Cambia el color del texto a blanco o el que prefieras */
+  }
+
+  .navegacion-principal a:hover{
+    color: black;
+    background-color: red;
+
+
+  }
+  @media (min-width: 768px){
+   .navegacion-principal{
+    flex-direction: row;
+    align-items: center;
+   }
+   .boton{
+    width: auto;
+   }
+  } 
+ 
+
+.hero{
+  background-image: url(fondo.png);
+  background-repeat: no-repeat;/*para que no se repita la imagen al hacer zoom*/
+  background-size: cover;/*para que abarque el tamañp0 de la pagina*/
+  margin-bottom: 2rem;
+}
+.conenido-hero{
+  position: absolute; /*el hijo debe ser absoluto*/
+  background-color: rgba(0,0,0,.7);
+  height: 100%;
+  direction: flex;
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.conenido-hero h2, .conenido-hero p{
+  color:white;
+  top:50%;
+  left:50%;
+}
+.ubicacion{
+  display: flex;
+  align-items: flex-end;
+
+}
+.boton{
+  background-color:var(--secundario);
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  color: var(--blanco);
+  margin-top:  3rem; 
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+
+}
+.servicios{
+  display: grid;
+  /*grid template-column:1fr 1fr 1fr*/
+  /*grid template-column:33.3% 33.3% 3.33%*/
+  grid-template-columns: repeat(3,1fr) ;
+  column-gap:1rem ; /*distancia entre columnas */
+  
+}
