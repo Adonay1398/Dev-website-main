@@ -1,76 +1,73 @@
 :root {
-  --blanco: #ffffff;
-
+  --blanco: #ffffff;         /* Definición de variables CSS personalizadas */
   --oscuro: #212121;
-  
   --primario: #ffc107;
-  
   --secundario: #0097a7;
-  
   --gris: #757575;
   --gris-claro: #dfe9f3;
 }
-  
+
 html {
-  font-size: 62.5%;
-  scroll-snap-type: mandatory;
-  box-sizing: border-box;
+  font-size: 62.5%;          /* Establece el tamaño de fuente base en 62.5% para facilitar el cálculo de em */
+  scroll-snap-type: mandatory;  /* Establece el comportamiento de desplazamiento de la página */
+  box-sizing: border-box;     /* Incluye el relleno y el borde en el tamaño total del elemento */
 }
-  
-*,*:before,*:after{
-  box-sizing: inherit;
 
+*, *:before, *:after {
+  box-sizing: inherit;        /* Hereda el box-sizing para todos los elementos y sus pseudo-elementos */
 }
+
 body {
-  font-size: 16px;
-  font-family: "krub",sans-serif;
-  background-image: linear-gradient(to top,red 5%,var(--blanco)100%);
-  /*text-align: center;*/
-  background-color: bisque;
-  
+  font-size: 16px;            /* Establece el tamaño de fuente predeterminado para el cuerpo */
+  font-family: "krub", sans-serif;  /* Establece la fuente principal */
+  background-image: linear-gradient(to top, red 5%, var(--blanco) 100%);  /* Fondo degradado */
+  background-color: bisque;    /* Fondo de color bisque */
 }
+
 h1 {
-  font-size: 3.8rem;
-
-}
-h2{
-  font-size: 2.8rem;
-}
-h3{
-  font-size: 1.8rem;
-
-}
-h1,h2,h3{
-  text-align: center;
+  font-size: 3.8rem;           /* Tamaño de fuente para los encabezados h1 */
 }
 
-@media (min-width: 480px ){
- body{
-  background-color: blue;
- }
+h2 {
+  font-size: 2.8rem;           /* Tamaño de fuente para los encabezados h2 */
 }
-.sombra{
-  box-shadow:0px 0px 0px 15px 0px rgba(112,112,112,0.48); 
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.48);
+
+h3 {
+  font-size: 1.8rem;           /* Tamaño de fuente para los encabezados h3 */
+}
+
+h1, h2, h3 {
+  text-align: center;          /* Centra los encabezados h1, h2, y h3 */
+}
+
+@media (min-width: 480px) {
+  body {
+    background-color: blue;    /* Cambia el color de fondo del cuerpo en pantallas más grandes */
+  }
+}
+
+.sombra {
+  /* Estilos para un contenedor con sombra */
+  box-shadow: 0px 0px 0px 15px 0px rgba(112, 112, 112, 0.48);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.48);
   background-color: var(--blanco);
   padding: 2rem;
   border-radius: 1rem;
-
 }
 
 .titulo {
+  /* Estilos para títulos */
   text-align: center;
   font-size: 3.8rem;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:linear-gradient(to top, var(--secundario 15%) );
-}
-.contenedor{
-  
-  margin: 0 auto;
-  max-width: 120rem;
+  background-color: linear-gradient(to top, var(--secundario 15%));  /* Fondo degradado para el título */
 }
 
+.contenedor {
+  margin: 0 auto;              /* Centra el contenido horizontalmente */
+  max-width: 120rem;           /* Establece el ancho máximo del contenedor */
+}
 .navegacion-principal {
   display: flex;
   justify-content: space-between;
@@ -80,211 +77,230 @@ h1,h2,h3{
   padding: 1rem;
   font-weight: bold;  
   font-size: 2rem;
-
 }
-  
+
+/* Estilos para la barra de navegación principal */
 .navegacion-principal a {
   padding: 1rem;
-  margin-left: 100px;
-  margin-right: 100px; /* Ajusta el valor según tus necesidades para aumentar el margen entre opciones */
-    
+  margin-left: 100px; /* Margen izquierdo entre enlaces, ajusta según sea necesario */
+  margin-right: 100px; /* Margen derecho entre enlaces, ajusta según sea necesario */
   text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: var(--blanco); /* Cambia el color del texto a blanco o el que prefieras */
+  color: var(--blanco); /* Color del texto de los enlaces */
 }
 
-.navegacion-principal a:hover{
-  color: var(--oscuro);
-  background-color: var(--secundario);
-
-
-}
-@media (min-width: 768px){
-   .navegacion-principal{
-    flex-direction: row;
-    align-items: space-between;
-   }
+/* Estilos para los enlaces de navegación al pasar el ratón sobre ellos */
+.navegacion-principal a:hover {
+  color: var(--oscuro);  /* Cambia el color del texto al pasar el ratón */
+  background-color: var(--secundario);  /* Cambia el fondo al pasar el ratón */
 }
 
- 
- 
-
-.hero{
-  background-image: url(/Imagenes/fondo.png);
-  background-repeat: no-repeat;/*para que no se repita la imagen al hacer zoom*/
-  background-size: cover;/*para que abarque el tamañp0 de la pagina*/
-  margin-bottom: 2rem;
-  height: 450px;
-  position: relative;
- 
-}
-.contenido-hero{
-  position: absolute; /*el hijo debe ser absoluto*/
-  background-color: rgba(0,0,0,.7);
-  height: 100%;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-}
-.contenido-hero h2, .contenido-hero p{
-  color:var(--blanco);
-  top:50%;
-  left:50%;
-}
-.ubicacion{
-  display: flex;
-  align-items: flex-end;
-
-}
-.boton{
-  background-color:var(--secundario);
-  text-decoration: none;
-  padding: 1rem 3rem;
-  border-radius: .5rem;
-  color: var(--blanco);
-  margin-top:  3rem; 
-  font-weight: bold;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  width: 90%;
-  
-
-}
-@media (min-width: 768px ) {
-  .boton{
-    width: auto;
+/* Estilos para pantallas más grandes (más de 768px) */
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;  /* Cambia la dirección a horizontal en pantallas más grandes */
+    align-items: space-between;  /* Espaciado entre los elementos en el eje transversal */
   }
-  .servicios{
-    display: grid;
-    /*grid template-column:1fr 1fr 1fr*/
-    /*grid template-column:33.3% 33.3% 3.33%*/
-    grid-template-columns: repeat(3,1fr) ;
-    column-gap:1rem ; /*distancia entre columnas */
-  
-  }
-  /*boton enviar*/
-  
-  .contenedor-campos{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 1rem;
-    grid-template-rows: auto auto 20rem;
-
-  }
-  .campo:nth-child(3),.campo:nth-child(4){
-    grid-column: 1/3;
-  }
-  
 }
 
-.servicio{
+.hero {
+  background-image: url(/Imagenes/fondo.png);  /* Establece la imagen de fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover;  /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+  margin-bottom: 2rem;  /* Margen inferior para separar de otros elementos */
+  height: 450px;  /* Altura fija del contenedor hero */
+  position: relative;  /* Establece la posición relativa para el contenido interno */
+}
+.contenido-hero {
+  position: absolute; /* Establece la posición absoluta para el contenido interno */
+  background-color: rgba(0, 0, 0, .7); /* Fondo semitransparente de color negro */
+  height: 100%; /* Ocupa el 100% de la altura del contenedor padre */
   display: flex;
-  flex-direction: column;
-  align-items: center;  
+  width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+  flex-direction: column; /* Orienta los elementos internos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
 }
 
-.servicio h3{
-  color: var(--secundario);
-  font-weight: normal;
- }
-.servicio p{
-  line-height: 2;
-  text-align: center;
+.contenido-hero h2, .contenido-hero p {
+  color: var(--blanco); /* Color del texto en el contenido hero */
+  top: 50%; /* Ajusta la posición vertical al 50% */
+  left: 50%; /* Ajusta la posición horizontal al 50% */
+}
+
+.ubicacion {
+  display: flex; /* Muestra los elementos hijos en línea */
+  align-items: flex-end; /* Alinea los elementos al final del eje transversal (abajo) */
+}
+
+.boton {
+  background-color: var(--secundario); /* Color de fondo del botón */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  padding: 1rem 3rem; /* Espaciado interno del botón */
+  border-radius: .5rem; /* Borde redondeado del botón */
+  color: var(--blanco); /* Color del texto en el botón */
+  margin-top: 3rem; /* Margen superior del botón */
+  font-weight: bold; /* Grosor de la fuente en negrita */
+  font-size: 2rem; /* Tamaño de la fuente del botón */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  text-align: center; /* Alineación del texto en el centro */
+  width: 90%; /* Ancho del botón en pantallas pequeñas */
+}
+
+/* Estilos adicionales para pantallas más grandes (más de 768px) */
+@media (min-width: 768px) {
+  .boton {
+    width: auto; /* Restaura el ancho automático del botón */
   }
-.servicio .iconos{
-  height: 15rem;
-  width: 15rem;
-  background-color: var(--primario);
-  border-radius: 50%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.formulario{
-  background-color: var(--gris);
-  width: min(60rem,100%);
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 1rem;
 
-}
-.formulario fieldset{
-  border: none;
+  /* Estilos para la clase .servicios en pantallas más grandes */
+  .servicios {
+    display: grid; /* Muestra los elementos como una cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    column-gap: 1rem; /* Espacio entre columnas */
+  }
 
-}
-.formulario legend{
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  color:var(--primario);
-}
-.contenedor-campos{
+  /* Estilos para el formulario en pantallas más grandes */
+  .contenedor-campos {
+    display: grid; /* Muestra los elementos como una cuadrícula */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    column-gap: 1rem; /* Espacio entre columnas */
+    grid-template-rows: auto auto 20rem; /* Tres filas, la tercera con altura de 20rem */
+  }
 
+  /* Ajustes específicos para los campos 3 y 4 del formulario en pantallas más grandes */
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+    grid-column: 1/3; /* Ocupa dos columnas */
+  }
 }
-.campo{
-  margin-bottom: 1rem;
-}
-.campo label{
-  color:var(--blanco);
-  font-weight: bold;
-  margin-bottom: .5rem;
-  display: block;
-}
-.input-text{
-  width: 100%;
-  border: none;
-  padding: 1.5rem;
-  border-radius: .5rem;
-}
-.campo textarea{
-  height: 20rem;
-}
-/*Boton */
-.boton{
-  background-color: var(--secundario);
-  color: var(--blanco);
-  padding:1rem 3rem ;
-  margin-top: 3rem;
-  font-size: 2rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: .5rem;
-  width: 90%;
-  text-align: center;
-  border:none;
-
-
+/* Estilos para la clase .servicio */
+.servicio {
+  display: flex; /* Muestra los elementos como una fila */
+  flex-direction: column; /* Orienta los elementos internos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
 }
 
-.boton:hover{
-  cursor: pointer;
-}
-.flex{
-  display: flex;
+/* Estilos para el encabezado h3 dentro de la clase .servicio */
+.servicio h3 {
+  color: var(--secundario); /* Color del texto en h3 */
+  font-weight: normal; /* Peso de la fuente normal */
 }
 
+/* Estilos para los párrafos dentro de la clase .servicio */
+.servicio p {
+  line-height: 2; /* Altura de línea doble */
+  text-align: center; /* Alineación del texto en el centro */
+}
 
-.w-sm-100{
-  width: 100%;
+/* Estilos para el contenedor .iconos dentro de la clase .servicio */
+.servicio .iconos {
+  height: 15rem; /* Altura del contenedor de iconos */
+  width: 15rem; /* Ancho del contenedor de iconos */
+  background-color: var(--primario); /* Color de fondo del contenedor de iconos */
+  border-radius: 50%; /* Borde redondeado del contenedor de iconos */
+  display: flex; /* Muestra los elementos como una fila */
+  justify-content: space-evenly; /* Espaciado uniforme entre los elementos */
+  align-items: center; /* Centra los elementos verticalmente */
+}
 
+/* Estilos para el formulario */
+.formulario {
+  background-color: var(--gris); /* Color de fondo del formulario */
+  width: min(60rem, 100%); /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 2rem; /* Relleno del formulario */
+  border-radius: 1rem; /* Borde redondeado del formulario */
 }
-.alinear-derecha{
-  justify-content: center;
-}
-.nav-bg{
-  background-color: var(--secundario);
 
+.formulario fieldset {
+  border: none; /* Elimina el borde del fieldset */
 }
-.footer{
-  text-align: center;
+
+.formulario legend {
+  text-align: center; /* Alineación del texto en el centro */
+  font-size: 1.8rem; /* Tamaño de la fuente del legend */
+  font-weight: bold; /* Peso de la fuente en negrita */
+  margin-bottom: 2rem; /* Margen inferior del legend */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  color: var(--primario); /* Color del texto del legend */
 }
-.titulo, .servicios-heading, .contacto-heading{
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+
+/* Estilos para el contenedor de campos */
+.contenedor-campos {}
+
+/* Estilos para los campos del formulario */
+.campo {
+  margin-bottom: 1rem; /* Margen inferior entre campos */
+}
+
+.campo label {
+  color: var(--blanco); /* Color del texto de la etiqueta del campo */
+  font-weight: bold; /* Peso de la fuente en negrita */
+  margin-bottom: .5rem; /* Margen inferior de la etiqueta del campo */
+  display: block; /* Muestra la etiqueta como un bloque */
+}
+
+.input-text {
+  width: 100%; /* Ancho del campo de entrada de texto */
+  border: none; /* Elimina el borde del campo de entrada de texto */
+  padding: 1.5rem; /* Relleno del campo de entrada de texto */
+  border-radius: .5rem; /* Borde redondeado del campo de entrada de texto */
+}
+
+.campo textarea {
+  height: 20rem; /* Altura del campo de entrada de texto de varias líneas */
+}
+
+/* Estilos para el botón del formulario */
+/* .boton{
+  background-color: var(--secundario); /* Color de fondo del botón */
+  /*color: var(--blanco); /* Color del texto del botón */
+  /*/padding: 1rem 3rem; /* Espaciado interno del botón */
+  /*margin-top: 3rem; /* Margen superior del botón */
+  /*font-size: 2rem; /* Tamaño de la fuente del botón */
+  /*text-decoration: none; /* Elimina el subrayado de los enlaces */
+  /*text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  /*font-weight: bold; /* Peso de la fuente en negrita */
+  /*border-radius: .5rem; /* Borde redondeado del botón */
+  /*width: 90%; /* Ancho del botón en pantallas pequeñas */
+  /*text-align: center; /* Alineación del texto en el centro */
+  /*border: none; */ /* Elimina el borde del botón */ 
+}
+
+/* Estilos para el hover del botón */
+.boton:hover {
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+/* Estilos para la clase .flex */
+.flex {
+  display: flex; /* Muestra los elementos como una fila */
+}
+
+/* Estilos para la clase .w-sm-100 */
+.w-sm-100 {
+  width: 100%; /* Ancho del 100% */
+}
+
+/* Estilos para la clase .alinear-derecha */
+.alinear-derecha {
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilos para la clase .nav-bg */
+.nav-bg {
+  background-color: var(--secundario); /* Color de fondo de la barra de navegación */
+}
+
+/* Estilos para la clase .footer */
+.footer {
+  text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilos para las clases .titulo, .servicios-heading, .contacto-heading */
+.titulo,
+.servicios-heading,
+.contacto-heading {
+  scroll-snap-align: start; /* Alineación del desplazamiento de desplazamiento */
+  scroll-snap-stop: always; /* Establece un punto de detención en el desplazamiento */
 }
